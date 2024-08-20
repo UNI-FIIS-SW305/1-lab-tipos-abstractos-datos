@@ -4,8 +4,8 @@
       push: 
         paths: 
           # Do not run workflow unless these files were modified
-          - 'assignment.py' 
-          - 'test_assignment.py' 
+          - 'laboratorio.py' 
+          - 'test_laboratorio.py' 
 
     jobs:
       build:

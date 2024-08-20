@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def hello_world() -> str:
     """
     Implement a function that returns Hello World!
@@ -16,6 +17,6 @@ def add_two(number: int) -> int:
 
 def zero_array(N: int) -> np.ndarray:
     """
-    Returns a double type ndarray of length N filled with zeros 
+    Returns a double type ndarray of length N filled with zeros
     """
     raise NotImplementedError()
