@@ -1,16 +1,21 @@
-    name: GitHub Classroom Workflow
+name: GitHub Classroom Workflow
 
-    on: 
-      push: 
-        paths: 
-          # Do not run workflow unless these files were modified
-          - 'laboratorio.py' 
-          - 'test_laboratorio.py' 
+on:
+  push:
+    paths:
+      # Do not run workflow unless these files were modified
+      - "laboratorio.py"
+      - "test_laboratorio.py"
 
-    jobs:
-      build:
-        name: Autograding
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-          - uses: education/autograding@v1
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: education/autograding@v1
