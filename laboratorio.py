@@ -84,7 +84,7 @@ class Vector:
 
         return resultado
 
-    def distancia_coseno(self, otro_vector):
+    def similitud_coseno(self, otro_vector):
         numerador = self.producto_escalar(otro_vector)
         denominador = math.sqrt(self.producto_escalar(self)) * math.sqrt(
             otro_vector.producto_escalar(otro_vector)

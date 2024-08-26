@@ -109,4 +109,4 @@ def test_crear_vector() -> None:
     otro_factor.asignar_elemento(2, 0)
     otro_factor.asignar_elemento(3, 0)
 
-    assert factor.distancia_coseno(otro_factor) == pytest.approx(0.486, rel=1e-2)
+    assert factor.similitud_coseno(otro_factor) == pytest.approx(0.486, rel=1e-2)
