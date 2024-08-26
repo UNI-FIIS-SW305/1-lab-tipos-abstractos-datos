@@ -1,9 +1,9 @@
 {
     "tests": [
       {
-        "name": "parte1",
+        "name": "Problema 1.1",
         "setup": "sudo -H pip3 install -r requirements.txt",
-        "run": "pytest test_laboratorio.py::test_hello",
+        "run": "pytest test_laboratorio.py::test_crear_tarjeta",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -11,9 +11,9 @@
         "points": 1
       },
       {
-        "name": "parte2",
+        "name": "Problema 1.2",
         "setup": "sudo -H pip3 install -r requirements.txt",
-        "run": "pytest test_laboratorio.py::test_add_two",
+        "run": "pytest test_laboratorio.py::test_comprar_con_tarjeta",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -21,9 +21,9 @@
         "points": 1
       },
       {
-        "name": "parte3",
+        "name": "Problema 2",
         "setup": "sudo -H pip3 install -r requirements.txt",
-        "run": "pytest test_laboratorio.py::test_zero_array",
+        "run": "pytest test_laboratorio.py::test_crear_vector",
         "input": "",
         "output": "",
         "comparison": "included",
