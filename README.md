@@ -1,4 +1,4 @@
-# Primer Laboratorio
+# SW 305: Primer Laboratorio
 
 Implemente los siguientes problemas en el archivo [`laboratorio.py`](laboratorio.py).
 **No edite el resto de archivos de este repositorio.**
@@ -32,3 +32,16 @@ Considerar que la primera coordenada del vector tiene índice `0`.
 * El método `es_igual(otro_vector)` devuelve `True` si ambos vectores son iguales, y `False` en caso contrario.
 * El método `producto_escalar(otro_vector)` devuelve el producto escalar de [dos vectores](https://www.superprof.es/apuntes/escolar/matematicas/analitica/vectores/producto-escalar-2.html).  En caso las dimensiones de los vectores sean diferentes, lanzar una excepción `ValueError`.
 * El método `similitud_coseno(otro_vector)` devuelve la [similitud coseno entre los dos vectores](https://www.learndatasci.com/glossary/cosine-similarity/).
+
+## Tercer Problema
+
+Un polinomio es una expresión algebraica,Q(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>n</sub>x<sup>n</sup> formada por un monomio o por la suma de varios monomios. Un monomio es una expresión algebraica formada por un coeficiente, una variable (por lo general x) y un exponente. Por ejemplo 5x<sup>3</sup>.
+
+Implemente la clase `Polinomio` para representar polinomios. Esta clase debe tener los siguientes atributos:
+
+* Un campo `coeficientes` que contenga una lista con los coeficientes del polinomio. El valor de esta lista es un parámetro del constructor. En la lista, el elemento de índice 0 contiene el coeficiente del término grado 0 del polinomio (el término constante). El elemento de índice 1 de la lista contiene el coeficiente del término de grado 1, y así sucesivamente.
+* Un método `obtener_grado`, que devuelve el [grado del polinomio](https://es.wikipedia.org/wiki/Grado_(polinomio)). Por ejemplo, Q(x) = 5 es un polinomio de grado 0,y Q(x) = 5 + x<sup>2</sup> es un polinomio de grado 2.
+* Un método `obtener_coeficiente(exponente)` que devuelva el coeficiente del término elevado al valor de `exponente`. Por ejemplo, en el polinomio Q(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> +  a<sub>3</sub>x<sup>3</sup> +... + a<sub>n</sub>x<sup>n</sup> el valor de `obtener_coeficiente(3)` tiene el valor de a<sub>3</sub>. En caso el valor de `exponente` sea inválido, generar una excepción `ValueError`.
+* Un método `modificar_coeficiente(exponente, coeficiente)` que modifique el coeficiente del término de exponente `exponente` por un nuevo valor `coeficiente`. Por ejemplo, si invocamos al método `modificar_coeficiente(3, b)` en el polinomio Q(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup>  + a<sub>3</sub>x<sup>3</sup> +... + a<sub>n</sub>x<sup>n</sup>, el polinomio resultado sería  Q(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup>  + bx<sup>3</sup> +... + a<sub>n</sub>x<sup>n</sup>. En caso el valor de `exponente` sea inválido, generar una excepción `ValueError`.
+* Un método `evaluar(valor)`, que reciba un entero `valor` y devuelva el valor del polinomio para ese valor. Por ejemplo, si invocamos `evaluar(1)` en el polinomio Q(x) = 5 + 4x + 3x<sup>2</sup> deberíamos obtener 12.
+* Un método `suma(otro_polinomio)`, que reciba un objeto de tipo `Polinomio`, y devuelva un nuevo objeto `Polinomio` que sea el resultado de [sumar](https://www.superprof.es/apuntes/escolar/matematicas/algebra/polinomios/suma-de-polinomios.html#tema_suma-de-polinomios) nuestro objeto con el polinomio `otro_polinomio`. Por ejemplo, si sumamos los polinomios Q(x) = 5 +4x + 3x<sup>2</sup> y P(x) = -3 -2x +4x<sup>2</sup> + x<sup>3</sup> obtenemos R(x) = 2 + 2x + 7x<sup>2</sup> + x<sup>3</sup>.
