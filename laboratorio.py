@@ -91,3 +91,55 @@ class Vector:
         )
 
         return numerador / denominador
+
+
+class Polinomio:
+    def __init__(self, coeficientes):
+        self.coeficientes = coeficientes
+
+    def obtener_grado(self):
+        return len(self.coeficientes) - 1
+
+    def obtener_coeficiente(self, exponente):
+        if exponente < 0 or exponente > self.obtener_grado():
+            raise ValueError("Coeficiente inválido")
+
+        return self.coeficientes[exponente]
+
+    def modificar_coeficiente(self, exponente, coeficiente):
+
+        if exponente < 0 or exponente > self.obtener_grado():
+            raise ValueError("Coeficiente inválido")
+        
+        self.coeficientes[exponente] = coeficiente
+
+    def evaluar(self, valor):
+        resultado = 0
+
+        for exponente, coeficiente in enumerate(self.coeficientes):
+            resultado = resultado + coeficiente * (valor**exponente)
+
+        return resultado
+
+    def sumar(self, otro_polinomio):
+
+        mis_coeficientes = self.coeficientes
+        otros_coeficientes = otro_polinomio.coeficientes
+
+        if self.obtener_grado() < otro_polinomio.obtener_grado():
+            mis_coeficientes = mis_coeficientes + [0] * (
+                otro_polinomio.obtener_grado() - self.obtener_grado()
+            )
+        elif self.obtener_grado() > otro_polinomio.obtener_grado():
+            otros_coeficientes = otros_coeficientes + [0] * (
+                self.obtener_grado() - otro_polinomio.obtener_grado()
+            )
+
+        coeficientes = [
+            coeficiente + otro_coeficiente
+            for coeficiente, otro_coeficiente in zip(
+                mis_coeficientes, otros_coeficientes
+            )
+        ]
+
+        return Polinomio(coeficientes=coeficientes)

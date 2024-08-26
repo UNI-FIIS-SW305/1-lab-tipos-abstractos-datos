@@ -110,3 +110,40 @@ def test_crear_vector() -> None:
     otro_factor.asignar_elemento(3, 0)
 
     assert factor.similitud_coseno(otro_factor) == pytest.approx(0.486, rel=1e-2)
+
+
+def test_polinomio() -> None:
+    polinomio: laboratorio.Polinomio = laboratorio.Polinomio(coeficientes=[0, 0, 0, 5])
+
+    assert polinomio.coeficientes == [0, 0, 0, 5]
+
+    polinomio = laboratorio.Polinomio([5])
+    assert polinomio.obtener_grado() == 0
+
+    polinomio = laboratorio.Polinomio([5, 0, 1])
+    assert polinomio.obtener_grado() == 2
+
+    polinomio = laboratorio.Polinomio([0, 1, 2, 3, 4])
+    assert polinomio.obtener_coeficiente(3) == 3
+
+    with pytest.raises(ValueError):
+        polinomio.obtener_coeficiente(5)
+
+    polinomio.modificar_coeficiente(3, 6)
+    assert polinomio.obtener_coeficiente(3) == 6
+
+    with pytest.raises(ValueError):
+        polinomio.modificar_coeficiente(-1, 0)
+
+    polinomio = laboratorio.Polinomio([5, 4, 3])
+    assert polinomio.evaluar(1) == 12
+
+    polinomio = laboratorio.Polinomio([5, 4, 3])
+    otro_polinomio: laboratorio.Polinomio = laboratorio.Polinomio([-3, -2, 4, 1])
+
+    polinomio_suma: laboratorio.Polinomio = polinomio.sumar(otro_polinomio)
+
+    assert polinomio_suma.obtener_coeficiente(0) == 2
+    assert polinomio_suma.obtener_coeficiente(1) == 2
+    assert polinomio_suma.obtener_coeficiente(2) == 7
+    assert polinomio_suma.obtener_coeficiente(3) == 1

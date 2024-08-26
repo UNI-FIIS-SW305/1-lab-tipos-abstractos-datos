@@ -1,34 +1,44 @@
 {
-    "tests": [
-      {
-        "name": "Problema 1.1",
-        "setup": "sudo -H pip3 install -r requirements.txt",
-        "run": "pytest test_laboratorio.py::test_crear_tarjeta",
-        "input": "",
-        "output": "",
-        "comparison": "included",
-        "timeout": 5,
-        "points": 1
-      },
-      {
-        "name": "Problema 1.2",
-        "setup": "sudo -H pip3 install -r requirements.txt",
-        "run": "pytest test_laboratorio.py::test_comprar_con_tarjeta",
-        "input": "",
-        "output": "",
-        "comparison": "included",
-        "timeout": 5,
-        "points": 1
-      },
-      {
-        "name": "Problema 2",
-        "setup": "sudo -H pip3 install -r requirements.txt",
-        "run": "pytest test_laboratorio.py::test_crear_vector",
-        "input": "",
-        "output": "",
-        "comparison": "included",
-        "timeout": 5,
-        "points": 1
-      }
-    ]
-  }
+  "tests": [
+    {
+      "name": "Problema 1.1",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest test_laboratorio.py::test_crear_tarjeta",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 0.5
+    },
+    {
+      "name": "Problema 1.2",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest test_laboratorio.py::test_comprar_con_tarjeta",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 0.5
+    },
+    {
+      "name": "Problema 2",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest test_laboratorio.py::test_crear_vector",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Problema 3",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest test_laboratorio.py::test_polinomio",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    }
+  ]
+}
