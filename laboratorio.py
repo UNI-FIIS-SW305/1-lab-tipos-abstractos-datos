@@ -182,3 +182,7 @@ class Rango:
             indice = indice + 1
 
         return resultado
+
+
+if __name__ == "__main__":
+    pass
