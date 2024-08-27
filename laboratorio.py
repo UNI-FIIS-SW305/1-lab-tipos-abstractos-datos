@@ -110,7 +110,7 @@ class Polinomio:
 
         if exponente < 0 or exponente > self.obtener_grado():
             raise ValueError("Coeficiente inválido")
-        
+
         self.coeficientes[exponente] = coeficiente
 
     def evaluar(self, valor):
@@ -143,3 +143,42 @@ class Polinomio:
         ]
 
         return Polinomio(coeficientes=coeficientes)
+
+
+class Rango:
+
+    def __init__(self, inicio, limite, distancia=1) -> None:
+        if distancia == 0:
+            raise ValueError("La distancia no puede ser cero.")
+
+        self.inicio = inicio
+        self.limite = limite
+        self.distancia = distancia
+
+    def numero_elementos(self):
+        rango_a_recorrer = self.limite - self.inicio
+        return rango_a_recorrer // self.distancia
+
+    def obtener_elemento(self, indice):
+        if indice < 0 or indice >= self.numero_elementos():
+            raise ValueError("Indice invalido")
+
+        return self.inicio + self.distancia * indice
+
+    def representar(self):
+        elementos = []
+        indice = 0
+        while len(elementos) < self.numero_elementos():
+            elementos.append(str(self.obtener_elemento(indice)))
+            indice = indice + 1
+
+        return ",".join(elementos)
+
+    def sumar(self):
+        resultado = 0
+        indice = 0
+        while indice < self.numero_elementos():
+            resultado = resultado + self.obtener_elemento(indice)
+            indice = indice + 1
+
+        return resultado

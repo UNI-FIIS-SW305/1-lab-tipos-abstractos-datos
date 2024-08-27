@@ -147,3 +147,38 @@ def test_polinomio() -> None:
     assert polinomio_suma.obtener_coeficiente(1) == 2
     assert polinomio_suma.obtener_coeficiente(2) == 7
     assert polinomio_suma.obtener_coeficiente(3) == 1
+
+
+def test_rango() -> None:
+    rango: laboratorio.Rango = laboratorio.Rango(inicio=2, limite=10, distancia=2)
+
+    assert rango.inicio == 2
+    assert rango.limite == 10
+    assert rango.distancia == 2
+
+    assert rango.numero_elementos() == 4
+
+    assert rango.obtener_elemento(0) == 2
+    assert rango.obtener_elemento(1) == 4
+    assert rango.obtener_elemento(2) == 6
+    assert rango.obtener_elemento(3) == 8
+
+    with pytest.raises(ValueError):
+        rango.obtener_elemento(4)
+
+    assert rango.representar() == "2,4,6,8"
+    assert rango.sumar() == 20
+
+    rango: laboratorio.Rango = laboratorio.Rango(inicio=2, limite=10)
+    assert rango.inicio == 2
+    assert rango.limite == 10
+    assert rango.distancia == 1
+
+    with pytest.raises(ValueError):
+        laboratorio.Rango(1, 1, 0)
+
+    rango: laboratorio.Rango = laboratorio.Rango(inicio=0, limite=5, distancia=1)
+    assert rango.numero_elementos() == 5
+
+    rango: laboratorio.Rango = laboratorio.Rango(inicio=0, limite=2, distancia=1)
+    assert rango.numero_elementos() == 2

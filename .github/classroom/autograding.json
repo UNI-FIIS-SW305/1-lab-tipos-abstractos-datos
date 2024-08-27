@@ -39,6 +39,17 @@
       "comparison": "included",
       "timeout": 5,
       "points": 1
+    },
+
+    {
+      "name": "Problema 4",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest test_laboratorio.py::test_rango",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
     }
   ]
 }
